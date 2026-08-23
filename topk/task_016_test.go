@@ -10,3 +10,13 @@ func TestTaskPerks016ExistingCountDirection(t *testing.T) {
 		t.Fatalf("count=%d", got)
 	}
 }
+
+func TestTaskPerks016ExistingCountDirectionBoundary(t *testing.T) {
+	s := New(2)
+	s.Insert("x")
+	s.Insert("x")
+	s.Insert("x")
+	if got := s.Query()[0].Count; got != 3 {
+		t.Fatalf("count=%d", got)
+	}
+}
