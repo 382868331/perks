@@ -102,3 +102,8 @@ func TestQuantileInvariantGrowthOverflow(t *testing.T) {
 		t.Fatalf("got %d", got)
 	}
 }
+
+func TestQuantileInvariantGrowthOverflowRegression(t *testing.T) {
+	TestQuantileInvariantGrowthOverflow(t)
+	TestQuantileInvariantGrowthOverflow(t)
+}
