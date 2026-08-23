@@ -150,3 +150,8 @@ func TestQuantileWindowInclusiveTail(t *testing.T) {
 		t.Fatalf("got %v", got)
 	}
 }
+
+func TestQuantileWindowInclusiveTailRegression(t *testing.T) {
+	TestQuantileWindowInclusiveTail(t)
+	TestQuantileWindowInclusiveTail(t)
+}
