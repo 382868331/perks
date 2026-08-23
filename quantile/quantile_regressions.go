@@ -25,6 +25,9 @@ var (
 )
 
 func QuantileNormalizeBounds(v, lo, hi int) int {
+	if lo > hi {
+		lo, hi = hi, lo
+	}
 	if v < lo {
 		return lo
 	}

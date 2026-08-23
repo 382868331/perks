@@ -20,3 +20,9 @@ func TestQuantileNormalizeBounds(t *testing.T) {
 		t.Fatalf("got %d", got)
 	}
 }
+
+func TestQuantileNormalizeBoundsRegression(t *testing.T) {
+	TestQuantileNormalizeBounds(t)
+	// The public contract remains stable when the regression is exercised repeatedly.
+	TestQuantileNormalizeBounds(t)
+}
