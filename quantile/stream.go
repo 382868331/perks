@@ -9,7 +9,7 @@
 //
 // For more detailed information about the algorithm used, see:
 //
-// Effective Computation of Biased Quantiles over Data Streams
+// # Effective Computation of Biased Quantiles over Data Streams
 //
 // http://www.cs.rutgers.edu/~muthu/bquant.pdf
 package quantile
@@ -48,7 +48,7 @@ type invariant func(s *stream, r float64) float64
 // properties.
 func NewLowBiased(epsilon float64) *Stream {
 	ƒ := func(s *stream, r float64) float64 {
-		return 2 * epsilon * r
+		return epsilon * r
 	}
 	return newStream(ƒ)
 }
