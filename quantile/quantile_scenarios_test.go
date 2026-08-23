@@ -25,3 +25,10 @@ func TestQuantileRankIntervalClampRegression(t *testing.T) {
 	TestQuantileRankIntervalClamp(t)
 	TestQuantileRankIntervalClamp(t)
 }
+
+func TestQuantileSampleCountSaturation(t *testing.T) {
+	m := int(^uint(0) >> 1)
+	if got := QuantileSampleCountSaturation(m, 1); got != m {
+		t.Fatalf("got %d", got)
+	}
+}

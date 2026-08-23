@@ -36,3 +36,5 @@ func QuantileRankIntervalClamp(v, lo, hi int) int {
 	}
 	return v
 }
+
+func QuantileSampleCountSaturation(a, b int) int { return a + b }
