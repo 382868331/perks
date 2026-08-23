@@ -80,7 +80,7 @@ func (s *Stream) Query() Samples {
 	for _, e := range s.mon {
 		sm = append(sm, e)
 	}
-	sort.Sort(sm)
+	sort.Sort(sort.Reverse(sm))
 
 	if len(sm) < s.k {
 		return sm
