@@ -205,3 +205,10 @@ func TestQuantileProcessUntilCanceledRegression(t *testing.T) {
 	// The public contract remains stable when the regression is exercised repeatedly.
 	TestQuantileProcessUntilCanceled(t)
 }
+
+func TestQuantileWrapCause(t *testing.T) {
+	base := errors.New("root")
+	if got := QuantileWrapCause(base); !errors.Is(got, base) {
+		t.Fatalf("chain lost: %v", got)
+	}
+}
