@@ -20,3 +20,19 @@ func TestTaskPerks012HeapPopPosition(t *testing.T) {
 		}
 	}
 }
+
+func TestTaskPerks012HeapPopSequence(t *testing.T) {
+	bs := Bins{}
+	for _, mean := range []float64{8, 2, 5, 1, 3} {
+		heap.Push(&bs, &Bin{Count: 1, Sum: mean})
+	}
+	for _, want := range []float64{1, 2, 3, 5, 8} {
+		got := heap.Pop(&bs).(*Bin).Mean()
+		if got != want {
+			t.Fatalf("pop=%v want=%v", got, want)
+		}
+	}
+	if len(bs) != 0 {
+		t.Fatalf("remaining=%d", len(bs))
+	}
+}
