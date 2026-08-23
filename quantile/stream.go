@@ -196,7 +196,7 @@ func (s *Stream) Samples() Samples {
 // Count returns the total number of samples observed in the stream
 // since initialization.
 func (s *Stream) Count() int {
-	return s.stream.count()
+	return len(s.b) + s.stream.count()
 }
 
 func (s *Stream) flush() {
