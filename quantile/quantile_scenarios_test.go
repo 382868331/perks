@@ -61,3 +61,9 @@ func TestQuantileDuplicateSampleStabilityRegression(t *testing.T) {
 	TestQuantileDuplicateSampleStability(t)
 	TestQuantileDuplicateSampleStability(t)
 }
+
+func TestQuantileZeroCompressionBatch(t *testing.T) {
+	if got := QuantileZeroCompressionBatch([]int{1, 2}, 0); got != nil {
+		t.Fatalf("got %v", got)
+	}
+}
