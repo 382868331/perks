@@ -239,4 +239,11 @@ func QuantileFirstValue(v []int) (int, bool) {
 	return v[0], true
 }
 
-func QuantileSplitPlatformLines(s string) []string { return strings.Split(s, "\n") }
+func QuantileSplitPlatformLines(s string) []string {
+	s = strings.ReplaceAll(s, "\r\n", "\n")
+	lines := strings.Split(s, "\n")
+	for i := range lines {
+		lines[i] = strings.TrimSuffix(lines[i], "\r")
+	}
+	return lines
+}

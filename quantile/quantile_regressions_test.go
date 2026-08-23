@@ -265,3 +265,9 @@ func TestQuantileSplitPlatformLines(t *testing.T) {
 		t.Fatalf("got %q", got)
 	}
 }
+
+func TestQuantileSplitPlatformLinesRegression(t *testing.T) {
+	TestQuantileSplitPlatformLines(t)
+	// The public contract remains stable when the regression is exercised repeatedly.
+	TestQuantileSplitPlatformLines(t)
+}
