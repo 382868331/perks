@@ -246,3 +246,8 @@ func TestQuantileFloatNaNDiagnosis(t *testing.T) {
 		t.Fatalf("got %q", got)
 	}
 }
+
+func TestQuantileFloatNaNDiagnosisRegression(t *testing.T) {
+	TestQuantileFloatNaNDiagnosis(t)
+	TestQuantileFloatNaNDiagnosis(t)
+}
