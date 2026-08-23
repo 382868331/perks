@@ -190,3 +190,10 @@ func TestQuantileCanceledStreamDrainRegression(t *testing.T) {
 	TestQuantileCanceledStreamDrain(t)
 	TestQuantileCanceledStreamDrain(t)
 }
+
+func TestQuantileObjectiveErrorChain(t *testing.T) {
+	base := errors.New("root")
+	if got := QuantileObjectiveErrorChain(base); !errors.Is(got, base) {
+		t.Fatalf("chain lost: %v", got)
+	}
+}

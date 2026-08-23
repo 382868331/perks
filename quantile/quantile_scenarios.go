@@ -206,3 +206,7 @@ func QuantileCanceledStreamDrain(ctx context.Context, n int) int {
 	}
 	return done
 }
+
+func QuantileObjectiveErrorChain(baseErr error) error {
+	return fmt.Errorf("operation failed: %v", baseErr)
+}
