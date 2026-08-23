@@ -59,3 +59,9 @@ func TestQuantileStableUnique(t *testing.T) {
 		t.Fatalf("got %v", got)
 	}
 }
+
+func TestQuantileStableUniqueRegression(t *testing.T) {
+	TestQuantileStableUnique(t)
+	// The public contract remains stable when the regression is exercised repeatedly.
+	TestQuantileStableUnique(t)
+}
