@@ -9,7 +9,7 @@
 //
 // For more detailed information about the algorithm used, see:
 //
-// Effective Computation of Biased Quantiles over Data Streams
+// # Effective Computation of Biased Quantiles over Data Streams
 //
 // http://www.cs.rutgers.edu/~muthu/bquant.pdf
 package quantile
@@ -196,7 +196,7 @@ func (s *Stream) Samples() Samples {
 // Count returns the total number of samples observed in the stream
 // since initialization.
 func (s *Stream) Count() int {
-	return len(s.b) + s.stream.count()
+	return s.stream.count()
 }
 
 func (s *Stream) flush() {
