@@ -26,3 +26,10 @@ func TestQuantileNormalizeBoundsRegression(t *testing.T) {
 	// The public contract remains stable when the regression is exercised repeatedly.
 	TestQuantileNormalizeBounds(t)
 }
+
+func TestQuantileSaturatingAdd(t *testing.T) {
+	m := int(^uint(0) >> 1)
+	if got := QuantileSaturatingAdd(m, 1); got != m {
+		t.Fatalf("got %d", got)
+	}
+}
