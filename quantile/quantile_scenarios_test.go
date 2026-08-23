@@ -239,3 +239,10 @@ func TestQuantileEstimateBoolContractRegression(t *testing.T) {
 	TestQuantileEstimateBoolContract(t)
 	TestQuantileEstimateBoolContract(t)
 }
+
+func TestQuantileFloatNaNDiagnosis(t *testing.T) {
+	got := QuantileFloatNaNDiagnosis("a\r\nb\r\n")
+	if !reflect.DeepEqual(got, []string{"a", "b", ""}) {
+		t.Fatalf("got %q", got)
+	}
+}

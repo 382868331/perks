@@ -240,3 +240,5 @@ func QuantileEstimateBoolContract(v []int) (int, bool) {
 	}
 	return v[0], true
 }
+
+func QuantileFloatNaNDiagnosis(s string) []string { return strings.Split(s, "\n") }
