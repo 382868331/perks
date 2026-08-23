@@ -132,3 +132,9 @@ func TestQuantileSummaryCloneIsolationRegression(t *testing.T) {
 	TestQuantileSummaryCloneIsolation(t)
 	TestQuantileSummaryCloneIsolation(t)
 }
+
+func TestQuantileReverseMetricRunes(t *testing.T) {
+	if got := QuantileReverseMetricRunes("A界🙂"); got != "🙂界A" {
+		t.Fatalf("got %q", got)
+	}
+}
