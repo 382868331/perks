@@ -154,3 +154,10 @@ func TestQuantileReverseUnicodeLabelRegression(t *testing.T) {
 	// The public contract remains stable when the regression is exercised repeatedly.
 	TestQuantileReverseUnicodeLabel(t)
 }
+
+func TestQuantileSlidingWindows(t *testing.T) {
+	got := QuantileSlidingWindows([]int{1, 2, 3}, 2)
+	if len(got) != 2 {
+		t.Fatalf("got %v", got)
+	}
+}
