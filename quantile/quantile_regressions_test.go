@@ -33,3 +33,9 @@ func TestQuantileSaturatingAdd(t *testing.T) {
 		t.Fatalf("got %d", got)
 	}
 }
+
+func TestQuantileSaturatingAddRegression(t *testing.T) {
+	TestQuantileSaturatingAdd(t)
+	// The public contract remains stable when the regression is exercised repeatedly.
+	TestQuantileSaturatingAdd(t)
+}
