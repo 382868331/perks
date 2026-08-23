@@ -91,3 +91,8 @@ func TestQuantileObjectiveBooleanOption(t *testing.T) {
 		t.Fatalf("got %v %v", got, err)
 	}
 }
+
+func TestQuantileObjectiveBooleanOptionRegression(t *testing.T) {
+	TestQuantileObjectiveBooleanOption(t)
+	TestQuantileObjectiveBooleanOption(t)
+}
