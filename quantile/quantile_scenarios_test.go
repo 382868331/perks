@@ -118,3 +118,12 @@ func TestQuantileQuantileOneIndexRegression(t *testing.T) {
 	TestQuantileQuantileOneIndex(t)
 	TestQuantileQuantileOneIndex(t)
 }
+
+func TestQuantileSummaryCloneIsolation(t *testing.T) {
+	in := map[string]map[string]int{"a": {"x": 1}}
+	got := QuantileSummaryCloneIsolation(in)
+	got["a"]["x"] = 9
+	if in["a"]["x"] != 1 {
+		t.Fatalf("input mutated")
+	}
+}
