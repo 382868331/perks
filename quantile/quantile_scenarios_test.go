@@ -107,3 +107,9 @@ func TestQuantileInvariantGrowthOverflowRegression(t *testing.T) {
 	TestQuantileInvariantGrowthOverflow(t)
 	TestQuantileInvariantGrowthOverflow(t)
 }
+
+func TestQuantileQuantileOneIndex(t *testing.T) {
+	if got := QuantileQuantileOneIndex([]int{1, 2, 3}, 1); got != 3 {
+		t.Fatalf("got %d", got)
+	}
+}
