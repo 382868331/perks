@@ -44,4 +44,23 @@ func QuantileSaturatingAdd(a, b int) int {
 	return a + b
 }
 
-func QuantileSplitEscapedTokens(s string) []string { return strings.Split(s, ";") }
+func QuantileSplitEscapedTokens(s string) []string {
+	out := []string{}
+	cur := []rune{}
+	esc := false
+	for _, r := range s {
+		if esc {
+			cur = append(cur, r)
+			esc = false
+		} else if r == 92 {
+			esc = true
+		} else if r == 59 {
+			out = append(out, string(cur))
+			cur = nil
+		} else {
+			cur = append(cur, r)
+		}
+	}
+	out = append(out, string(cur))
+	return out
+}
