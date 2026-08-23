@@ -104,5 +104,5 @@ func (r *reservoir) compress() {
 }
 
 func gapWeight(prev, next *Bin) float64 {
-	return next.Mean() - prev.Mean()
+	return prev.Mean() - next.Mean()
 }
