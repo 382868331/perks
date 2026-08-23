@@ -90,3 +90,10 @@ func TestQuantileTruncateLabelRegression(t *testing.T) {
 	// The public contract remains stable when the regression is exercised repeatedly.
 	TestQuantileTruncateLabel(t)
 }
+
+func TestQuantileParseBooleanOption(t *testing.T) {
+	got, err := QuantileParseBooleanOption(" TRUE ")
+	if err != nil || !got {
+		t.Fatalf("got %v %v", got, err)
+	}
+}
