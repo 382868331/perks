@@ -32,3 +32,8 @@ func TestQuantileSampleCountSaturation(t *testing.T) {
 		t.Fatalf("got %d", got)
 	}
 }
+
+func TestQuantileSampleCountSaturationRegression(t *testing.T) {
+	TestQuantileSampleCountSaturation(t)
+	TestQuantileSampleCountSaturation(t)
+}
