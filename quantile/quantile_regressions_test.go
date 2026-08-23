@@ -252,3 +252,9 @@ func TestQuantileFirstValue(t *testing.T) {
 		t.Fatalf("got %d %v", v, ok)
 	}
 }
+
+func TestQuantileFirstValueRegression(t *testing.T) {
+	TestQuantileFirstValue(t)
+	// The public contract remains stable when the regression is exercised repeatedly.
+	TestQuantileFirstValue(t)
+}
