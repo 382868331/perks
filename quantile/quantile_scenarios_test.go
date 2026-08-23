@@ -49,3 +49,10 @@ func TestQuantileEscapedObjectiveListRegression(t *testing.T) {
 	TestQuantileEscapedObjectiveList(t)
 	TestQuantileEscapedObjectiveList(t)
 }
+
+func TestQuantileDuplicateSampleStability(t *testing.T) {
+	got := QuantileDuplicateSampleStability([]int{3, 1, 3, 2, 1})
+	if !reflect.DeepEqual(got, []int{3, 1, 2}) {
+		t.Fatalf("got %v", got)
+	}
+}
