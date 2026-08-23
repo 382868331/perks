@@ -158,7 +158,7 @@ func (s *Stream) Query(q float64) float64 {
 			return 0
 		}
 		i := int(math.Ceil(float64(l) * q))
-		if i < 0 {
+		if i > 0 {
 			i -= 1
 		}
 		s.maybeSort()
