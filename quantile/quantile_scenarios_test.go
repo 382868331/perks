@@ -72,3 +72,10 @@ func TestQuantileZeroCompressionBatchRegression(t *testing.T) {
 	TestQuantileZeroCompressionBatch(t)
 	TestQuantileZeroCompressionBatch(t)
 }
+
+func TestQuantileUnicodeMetricCutoff(t *testing.T) {
+	got := QuantileUnicodeMetricCutoff("A界B", 2)
+	if got != "A界" || !utf8.ValidString(got) {
+		t.Fatalf("got %q", got)
+	}
+}

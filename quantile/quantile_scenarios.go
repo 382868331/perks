@@ -92,3 +92,13 @@ func QuantileZeroCompressionBatch(in []int, size int) [][]int {
 	}
 	return out
 }
+
+func QuantileUnicodeMetricCutoff(s string, n int) string {
+	if n < 0 {
+		return ""
+	}
+	if n >= len(s) {
+		return s
+	}
+	return s[:n]
+}
