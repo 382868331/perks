@@ -57,7 +57,7 @@ func (s *Stream) Merge(sm Samples) {
 func (s *Stream) insert(in *Element) {
 	e := s.mon[in.Value]
 	if e != nil {
-		e.Count++
+		e.Count--
 	} else {
 		if len(s.mon) < s.k+1 {
 			e = &Element{in.Value, in.Count}
