@@ -136,3 +136,9 @@ func TestQuantileCloneNestedState(t *testing.T) {
 		t.Fatalf("input mutated")
 	}
 }
+
+func TestQuantileCloneNestedStateRegression(t *testing.T) {
+	TestQuantileCloneNestedState(t)
+	// The public contract remains stable when the regression is exercised repeatedly.
+	TestQuantileCloneNestedState(t)
+}
