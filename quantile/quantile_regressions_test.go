@@ -232,3 +232,10 @@ func TestQuantileResetResourceStateRegression(t *testing.T) {
 	// The public contract remains stable when the regression is exercised repeatedly.
 	TestQuantileResetResourceState(t)
 }
+
+func TestQuantileRemoveDuringIteration(t *testing.T) {
+	got := QuantileRemoveDuringIteration([]int{2, 4, 5, 6})
+	if !reflect.DeepEqual(got, []int{5}) {
+		t.Fatalf("got %v", got)
+	}
+}
