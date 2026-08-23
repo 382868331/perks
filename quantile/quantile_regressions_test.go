@@ -77,3 +77,10 @@ func TestQuantilePartitionValuesRegression(t *testing.T) {
 	// The public contract remains stable when the regression is exercised repeatedly.
 	TestQuantilePartitionValues(t)
 }
+
+func TestQuantileTruncateLabel(t *testing.T) {
+	got := QuantileTruncateLabel("A界B", 2)
+	if got != "A界" || !utf8.ValidString(got) {
+		t.Fatalf("got %q", got)
+	}
+}
