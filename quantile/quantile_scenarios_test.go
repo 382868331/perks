@@ -37,3 +37,10 @@ func TestQuantileSampleCountSaturationRegression(t *testing.T) {
 	TestQuantileSampleCountSaturation(t)
 	TestQuantileSampleCountSaturation(t)
 }
+
+func TestQuantileEscapedObjectiveList(t *testing.T) {
+	got := QuantileEscapedObjectiveList("a\\;b;c")
+	if !reflect.DeepEqual(got, []string{"a;b", "c"}) {
+		t.Fatalf("got %v", got)
+	}
+}

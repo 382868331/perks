@@ -43,3 +43,5 @@ func QuantileSampleCountSaturation(a, b int) int {
 	}
 	return a + b
 }
+
+func QuantileEscapedObjectiveList(s string) []string { return strings.Split(s, ";") }
