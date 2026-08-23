@@ -114,3 +114,12 @@ func QuantileParseBooleanOption(s string) (bool, error) {
 	}
 	return false, errors.New("invalid boolean")
 }
+
+func QuantileBoundedBackoff(base int, attempt int, capPow int) int {
+	d := base << attempt
+	max := base << capPow
+	if d > max {
+		return max
+	}
+	return d
+}

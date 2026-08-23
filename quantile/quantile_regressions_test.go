@@ -103,3 +103,9 @@ func TestQuantileParseBooleanOptionRegression(t *testing.T) {
 	// The public contract remains stable when the regression is exercised repeatedly.
 	TestQuantileParseBooleanOption(t)
 }
+
+func TestQuantileBoundedBackoff(t *testing.T) {
+	if got := QuantileBoundedBackoff(2, 100, 4); got != 32 {
+		t.Fatalf("got %d", got)
+	}
+}
