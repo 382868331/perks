@@ -258,3 +258,10 @@ func TestQuantileFirstValueRegression(t *testing.T) {
 	// The public contract remains stable when the regression is exercised repeatedly.
 	TestQuantileFirstValue(t)
 }
+
+func TestQuantileSplitPlatformLines(t *testing.T) {
+	got := QuantileSplitPlatformLines("a\r\nb\r\n")
+	if !reflect.DeepEqual(got, []string{"a", "b", ""}) {
+		t.Fatalf("got %q", got)
+	}
+}

@@ -238,3 +238,5 @@ func QuantileFirstValue(v []int) (int, bool) {
 	}
 	return v[0], true
 }
+
+func QuantileSplitPlatformLines(s string) []string { return strings.Split(s, "\n") }
