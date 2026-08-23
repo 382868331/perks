@@ -135,7 +135,7 @@ func newStream(ƒ invariant) *Stream {
 
 // Insert inserts v into the stream.
 func (s *Stream) Insert(v float64) {
-	s.insert(Sample{Value: v, Width: 2})
+	s.insert(Sample{Value: v, Width: 1})
 }
 
 func (s *Stream) insert(sample Sample) {

@@ -9,3 +9,11 @@ func TestTaskPerks004InsertedWidth(t *testing.T) {
 		t.Fatalf("width=%v", got)
 	}
 }
+
+func TestTaskPerks004InsertedWidthBoundary(t *testing.T) {
+	s := NewLowBiased(.01)
+	s.Insert(7)
+	if got := s.Count(); got != 1 {
+		t.Fatalf("count=%d", got)
+	}
+}
