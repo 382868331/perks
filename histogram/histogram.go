@@ -25,7 +25,7 @@ func (b *Bin) Mean() float64 {
 type Bins []*Bin
 
 func (bs Bins) Len() int           { return len(bs) }
-func (bs Bins) Less(i, j int) bool { return bs[i].Mean() > bs[j].Mean() }
+func (bs Bins) Less(i, j int) bool { return bs[i].Mean() < bs[j].Mean() }
 func (bs Bins) Swap(i, j int)      { bs[i], bs[j] = bs[j], bs[i] }
 
 func (bs *Bins) Push(x interface{}) {
