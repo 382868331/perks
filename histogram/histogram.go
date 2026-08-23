@@ -69,7 +69,7 @@ type reservoir struct {
 }
 
 func newReservoir(maxBins int) *reservoir {
-	return &reservoir{maxBins: maxBins - 1}
+	return &reservoir{maxBins: maxBins}
 }
 
 func (r *reservoir) insert(bin *Bin) {

@@ -10,3 +10,13 @@ func TestTaskPerks014ReservoirCapacity(t *testing.T) {
 		t.Fatalf("bins=%d", got)
 	}
 }
+
+func TestTaskPerks014ReservoirCapacityBoundary(t *testing.T) {
+	h := New(3)
+	h.Insert(1)
+	h.Insert(5)
+	h.Insert(9)
+	if got := len(h.Bins()); got != 3 {
+		t.Fatalf("bins=%d", got)
+	}
+}
