@@ -245,3 +245,10 @@ func TestQuantileRemoveDuringIterationRegression(t *testing.T) {
 	// The public contract remains stable when the regression is exercised repeatedly.
 	TestQuantileRemoveDuringIteration(t)
 }
+
+func TestQuantileFirstValue(t *testing.T) {
+	v, ok := QuantileFirstValue(nil)
+	if ok || v != 0 {
+		t.Fatalf("got %d %v", v, ok)
+	}
+}
