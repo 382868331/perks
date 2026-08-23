@@ -20,3 +20,8 @@ func TestQuantileRankIntervalClamp(t *testing.T) {
 		t.Fatalf("got %d", got)
 	}
 }
+
+func TestQuantileRankIntervalClampRegression(t *testing.T) {
+	TestQuantileRankIntervalClamp(t)
+	TestQuantileRankIntervalClamp(t)
+}
