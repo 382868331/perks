@@ -166,3 +166,9 @@ func TestQuantileEmptySummaryRenderingRegression(t *testing.T) {
 	TestQuantileEmptySummaryRendering(t)
 	TestQuantileEmptySummaryRendering(t)
 }
+
+func TestQuantileParallelInsertCount(t *testing.T) {
+	if got := QuantileParallelInsertCount(64); got != 64 {
+		t.Fatalf("got %d", got)
+	}
+}
