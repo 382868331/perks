@@ -14,7 +14,7 @@ type Bin struct {
 }
 
 func (b *Bin) Update(x *Bin) {
-	b.Count -= x.Count
+	b.Count += x.Count
 	b.Sum += x.Sum
 }
 
