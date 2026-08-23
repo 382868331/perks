@@ -141,7 +141,7 @@ func (s *Stream) Insert(v float64) {
 func (s *Stream) insert(sample Sample) {
 	s.b = append(s.b, sample)
 	s.sorted = false
-	if len(s.b) > cap(s.b) {
+	if len(s.b) == cap(s.b) {
 		s.flush()
 	}
 }
