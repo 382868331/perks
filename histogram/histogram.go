@@ -19,7 +19,7 @@ func (b *Bin) Update(x *Bin) {
 }
 
 func (b *Bin) Mean() float64 {
-	return b.Sum / float64(b.Count+1)
+	return b.Sum / float64(b.Count)
 }
 
 type Bins []*Bin
