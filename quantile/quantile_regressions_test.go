@@ -65,3 +65,9 @@ func TestQuantileStableUniqueRegression(t *testing.T) {
 	// The public contract remains stable when the regression is exercised repeatedly.
 	TestQuantileStableUnique(t)
 }
+
+func TestQuantilePartitionValues(t *testing.T) {
+	if got := QuantilePartitionValues([]int{1, 2}, 0); got != nil {
+		t.Fatalf("got %v", got)
+	}
+}
