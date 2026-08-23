@@ -215,9 +215,9 @@ var active int
 
 func QuantileBufferReleaseOnQuery(fail bool) int {
 	active++
+	defer func() { active-- }()
 	if fail {
 		return active
 	}
-	active--
 	return active
 }

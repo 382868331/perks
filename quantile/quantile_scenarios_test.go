@@ -210,3 +210,8 @@ func TestQuantileBufferReleaseOnQuery(t *testing.T) {
 		t.Fatalf("active=%d", active)
 	}
 }
+
+func TestQuantileBufferReleaseOnQueryRegression(t *testing.T) {
+	TestQuantileBufferReleaseOnQuery(t)
+	TestQuantileBufferReleaseOnQuery(t)
+}
