@@ -142,3 +142,9 @@ func TestQuantileCloneNestedStateRegression(t *testing.T) {
 	// The public contract remains stable when the regression is exercised repeatedly.
 	TestQuantileCloneNestedState(t)
 }
+
+func TestQuantileReverseUnicodeLabel(t *testing.T) {
+	if got := QuantileReverseUnicodeLabel("A界🙂"); got != "🙂界A" {
+		t.Fatalf("got %q", got)
+	}
+}
