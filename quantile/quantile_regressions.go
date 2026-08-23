@@ -129,3 +129,10 @@ func QuantileBoundedBackoff(base int, attempt int, capPow int) int {
 	}
 	return d
 }
+
+func QuantileSelectUpperQuantile(v []int, p float64) int {
+	if len(v) == 0 {
+		return 0
+	}
+	return v[int(p*float64(len(v)))]
+}
