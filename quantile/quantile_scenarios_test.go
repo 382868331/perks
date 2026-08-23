@@ -44,3 +44,8 @@ func TestQuantileEscapedObjectiveList(t *testing.T) {
 		t.Fatalf("got %v", got)
 	}
 }
+
+func TestQuantileEscapedObjectiveListRegression(t *testing.T) {
+	TestQuantileEscapedObjectiveList(t)
+	TestQuantileEscapedObjectiveList(t)
+}
