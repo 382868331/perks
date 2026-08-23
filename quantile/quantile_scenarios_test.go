@@ -143,3 +143,10 @@ func TestQuantileReverseMetricRunesRegression(t *testing.T) {
 	TestQuantileReverseMetricRunes(t)
 	TestQuantileReverseMetricRunes(t)
 }
+
+func TestQuantileWindowInclusiveTail(t *testing.T) {
+	got := QuantileWindowInclusiveTail([]int{1, 2, 3}, 2)
+	if len(got) != 2 {
+		t.Fatalf("got %v", got)
+	}
+}
