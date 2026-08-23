@@ -208,3 +208,14 @@ func QuantileProcessUntilCanceled(ctx context.Context, n int) int {
 }
 
 func QuantileWrapCause(baseErr error) error { return fmt.Errorf("operation failed: %w", baseErr) }
+
+var active int
+
+func QuantileResetResourceState(fail bool) int {
+	active++
+	if fail {
+		return active
+	}
+	active--
+	return active
+}

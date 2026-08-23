@@ -218,3 +218,11 @@ func TestQuantileWrapCauseRegression(t *testing.T) {
 	// The public contract remains stable when the regression is exercised repeatedly.
 	TestQuantileWrapCause(t)
 }
+
+func TestQuantileResetResourceState(t *testing.T) {
+	active = 0
+	QuantileResetResourceState(true)
+	if active != 0 {
+		t.Fatalf("active=%d", active)
+	}
+}
