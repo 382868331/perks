@@ -148,3 +148,9 @@ func TestQuantileReverseUnicodeLabel(t *testing.T) {
 		t.Fatalf("got %q", got)
 	}
 }
+
+func TestQuantileReverseUnicodeLabelRegression(t *testing.T) {
+	TestQuantileReverseUnicodeLabel(t)
+	// The public contract remains stable when the regression is exercised repeatedly.
+	TestQuantileReverseUnicodeLabel(t)
+}
