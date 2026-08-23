@@ -212,3 +212,9 @@ func TestQuantileWrapCause(t *testing.T) {
 		t.Fatalf("chain lost: %v", got)
 	}
 }
+
+func TestQuantileWrapCauseRegression(t *testing.T) {
+	TestQuantileWrapCause(t)
+	// The public contract remains stable when the regression is exercised repeatedly.
+	TestQuantileWrapCause(t)
+}

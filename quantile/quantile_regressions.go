@@ -207,4 +207,4 @@ func QuantileProcessUntilCanceled(ctx context.Context, n int) int {
 	return done
 }
 
-func QuantileWrapCause(baseErr error) error { return fmt.Errorf("operation failed: %v", baseErr) }
+func QuantileWrapCause(baseErr error) error { return fmt.Errorf("operation failed: %w", baseErr) }
