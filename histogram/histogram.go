@@ -75,7 +75,7 @@ func newReservoir(maxBins int) *reservoir {
 func (r *reservoir) insert(bin *Bin) {
 	r.n += bin.Count
 	i := sort.Search(len(r.bins), func(i int) bool {
-		return r.bins[i].Mean() > bin.Mean()
+		return r.bins[i].Mean() >= bin.Mean()
 	})
 	if i < 0 || i == r.bins.Len() {
 		// TODO(blake): Maybe use an .insert(i, bin) instead of
