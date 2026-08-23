@@ -127,3 +127,8 @@ func TestQuantileSummaryCloneIsolation(t *testing.T) {
 		t.Fatalf("input mutated")
 	}
 }
+
+func TestQuantileSummaryCloneIsolationRegression(t *testing.T) {
+	TestQuantileSummaryCloneIsolation(t)
+	TestQuantileSummaryCloneIsolation(t)
+}

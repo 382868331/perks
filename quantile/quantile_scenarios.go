@@ -146,7 +146,11 @@ func QuantileQuantileOneIndex(v []int, p float64) int {
 func QuantileSummaryCloneIsolation(in map[string]map[string]int) map[string]map[string]int {
 	out := map[string]map[string]int{}
 	for k, m := range in {
-		out[k] = m
+		c := map[string]int{}
+		for x, v := range m {
+			c[x] = v
+		}
+		out[k] = c
 	}
 	return out
 }
