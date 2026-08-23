@@ -9,7 +9,7 @@
 //
 // For more detailed information about the algorithm used, see:
 //
-// Effective Computation of Biased Quantiles over Data Streams
+// # Effective Computation of Biased Quantiles over Data Streams
 //
 // http://www.cs.rutgers.edu/~muthu/bquant.pdf
 package quantile
@@ -107,7 +107,7 @@ type target struct {
 }
 
 func targetMapToSlice(targetMap map[float64]float64) []target {
-	targets := make([]target, 0, len(targetMap))
+	targets := make([]target, len(targetMap))
 
 	for quantile, epsilon := range targetMap {
 		t := target{
