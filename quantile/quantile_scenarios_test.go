@@ -56,3 +56,8 @@ func TestQuantileDuplicateSampleStability(t *testing.T) {
 		t.Fatalf("got %v", got)
 	}
 }
+
+func TestQuantileDuplicateSampleStabilityRegression(t *testing.T) {
+	TestQuantileDuplicateSampleStability(t)
+	TestQuantileDuplicateSampleStability(t)
+}
