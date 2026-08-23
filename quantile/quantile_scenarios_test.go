@@ -79,3 +79,8 @@ func TestQuantileUnicodeMetricCutoff(t *testing.T) {
 		t.Fatalf("got %q", got)
 	}
 }
+
+func TestQuantileUnicodeMetricCutoffRegression(t *testing.T) {
+	TestQuantileUnicodeMetricCutoff(t)
+	TestQuantileUnicodeMetricCutoff(t)
+}
