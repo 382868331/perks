@@ -43,3 +43,5 @@ func QuantileSaturatingAdd(a, b int) int {
 	}
 	return a + b
 }
+
+func QuantileSplitEscapedTokens(s string) []string { return strings.Split(s, ";") }
