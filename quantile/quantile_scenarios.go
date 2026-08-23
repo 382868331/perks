@@ -221,3 +221,13 @@ func QuantileBufferReleaseOnQuery(fail bool) int {
 	}
 	return active
 }
+
+func QuantileTupleDeleteIterator(in []int) []int {
+	out := append([]int(nil), in...)
+	for i := 0; i < len(out); i++ {
+		if out[i]%2 == 0 {
+			out = append(out[:i], out[i+1:]...)
+		}
+	}
+	return out
+}

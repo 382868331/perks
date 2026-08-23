@@ -215,3 +215,10 @@ func TestQuantileBufferReleaseOnQueryRegression(t *testing.T) {
 	TestQuantileBufferReleaseOnQuery(t)
 	TestQuantileBufferReleaseOnQuery(t)
 }
+
+func TestQuantileTupleDeleteIterator(t *testing.T) {
+	got := QuantileTupleDeleteIterator([]int{2, 4, 5, 6})
+	if !reflect.DeepEqual(got, []int{5}) {
+		t.Fatalf("got %v", got)
+	}
+}
