@@ -161,3 +161,8 @@ func TestQuantileEmptySummaryRendering(t *testing.T) {
 		t.Fatalf("got %q", got)
 	}
 }
+
+func TestQuantileEmptySummaryRenderingRegression(t *testing.T) {
+	TestQuantileEmptySummaryRendering(t)
+	TestQuantileEmptySummaryRendering(t)
+}
