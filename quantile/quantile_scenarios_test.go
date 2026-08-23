@@ -138,3 +138,8 @@ func TestQuantileReverseMetricRunes(t *testing.T) {
 		t.Fatalf("got %q", got)
 	}
 }
+
+func TestQuantileReverseMetricRunesRegression(t *testing.T) {
+	TestQuantileReverseMetricRunes(t)
+	TestQuantileReverseMetricRunes(t)
+}
