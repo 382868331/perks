@@ -66,7 +66,7 @@ func (s *Stream) insert(in *Element) {
 			e = s.min
 			delete(s.mon, e.Value)
 			e.Value = in.Value
-			e.Count += in.Count
+			e.Count = in.Count
 			s.min = e
 		}
 	}
