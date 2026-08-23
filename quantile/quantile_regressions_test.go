@@ -84,3 +84,9 @@ func TestQuantileTruncateLabel(t *testing.T) {
 		t.Fatalf("got %q", got)
 	}
 }
+
+func TestQuantileTruncateLabelRegression(t *testing.T) {
+	TestQuantileTruncateLabel(t)
+	// The public contract remains stable when the regression is exercised repeatedly.
+	TestQuantileTruncateLabel(t)
+}
