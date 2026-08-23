@@ -234,3 +234,8 @@ func TestQuantileEstimateBoolContract(t *testing.T) {
 		t.Fatalf("got %d %v", v, ok)
 	}
 }
+
+func TestQuantileEstimateBoolContractRegression(t *testing.T) {
+	TestQuantileEstimateBoolContract(t)
+	TestQuantileEstimateBoolContract(t)
+}

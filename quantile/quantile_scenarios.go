@@ -236,7 +236,7 @@ func QuantileTupleDeleteIterator(in []int) []int {
 
 func QuantileEstimateBoolContract(v []int) (int, bool) {
 	if len(v) == 0 {
-		return 1, false
+		return 0, false
 	}
 	return v[0], true
 }
