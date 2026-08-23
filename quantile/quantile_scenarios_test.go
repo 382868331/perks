@@ -172,3 +172,8 @@ func TestQuantileParallelInsertCount(t *testing.T) {
 		t.Fatalf("got %d", got)
 	}
 }
+
+func TestQuantileParallelInsertCountRegression(t *testing.T) {
+	TestQuantileParallelInsertCount(t)
+	TestQuantileParallelInsertCount(t)
+}
