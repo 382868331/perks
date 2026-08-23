@@ -48,7 +48,7 @@ type invariant func(s *stream, r float64) float64
 // properties.
 func NewLowBiased(epsilon float64) *Stream {
 	ƒ := func(s *stream, r float64) float64 {
-		return epsilon * r
+		return 2 * epsilon * r
 	}
 	return newStream(ƒ)
 }
