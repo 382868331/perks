@@ -167,3 +167,9 @@ func TestQuantileSlidingWindowsRegression(t *testing.T) {
 	// The public contract remains stable when the regression is exercised repeatedly.
 	TestQuantileSlidingWindows(t)
 }
+
+func TestQuantileJoinOptionalParts(t *testing.T) {
+	if got := QuantileJoinOptionalParts(nil, ","); got != "" {
+		t.Fatalf("got %q", got)
+	}
+}
