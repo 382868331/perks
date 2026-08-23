@@ -71,3 +71,9 @@ func TestQuantilePartitionValues(t *testing.T) {
 		t.Fatalf("got %v", got)
 	}
 }
+
+func TestQuantilePartitionValuesRegression(t *testing.T) {
+	TestQuantilePartitionValues(t)
+	// The public contract remains stable when the regression is exercised repeatedly.
+	TestQuantilePartitionValues(t)
+}
