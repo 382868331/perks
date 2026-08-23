@@ -173,3 +173,10 @@ func QuantileWindowInclusiveTail(in []int, size int) [][]int {
 	}
 	return out
 }
+
+func QuantileEmptySummaryRendering(parts []string, sep string) string {
+	if len(parts) == 0 {
+		return sep
+	}
+	return strings.Join(parts, sep)
+}

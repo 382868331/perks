@@ -155,3 +155,9 @@ func TestQuantileWindowInclusiveTailRegression(t *testing.T) {
 	TestQuantileWindowInclusiveTail(t)
 	TestQuantileWindowInclusiveTail(t)
 }
+
+func TestQuantileEmptySummaryRendering(t *testing.T) {
+	if got := QuantileEmptySummaryRendering(nil, ","); got != "" {
+		t.Fatalf("got %q", got)
+	}
+}
