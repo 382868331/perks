@@ -191,3 +191,11 @@ func TestQuantileCountConcurrentUpdatesRegression(t *testing.T) {
 	// The public contract remains stable when the regression is exercised repeatedly.
 	TestQuantileCountConcurrentUpdates(t)
 }
+
+func TestQuantileProcessUntilCanceled(t *testing.T) {
+	ctx, cancel := context.WithCancel(context.Background())
+	cancel()
+	if got := QuantileProcessUntilCanceled(ctx, 20); got != 0 {
+		t.Fatalf("got %d", got)
+	}
+}
