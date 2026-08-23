@@ -226,3 +226,9 @@ func TestQuantileResetResourceState(t *testing.T) {
 		t.Fatalf("active=%d", active)
 	}
 }
+
+func TestQuantileResetResourceStateRegression(t *testing.T) {
+	TestQuantileResetResourceState(t)
+	// The public contract remains stable when the regression is exercised repeatedly.
+	TestQuantileResetResourceState(t)
+}
