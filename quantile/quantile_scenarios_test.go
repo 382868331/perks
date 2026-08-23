@@ -185,3 +185,8 @@ func TestQuantileCanceledStreamDrain(t *testing.T) {
 		t.Fatalf("got %d", got)
 	}
 }
+
+func TestQuantileCanceledStreamDrainRegression(t *testing.T) {
+	TestQuantileCanceledStreamDrain(t)
+	TestQuantileCanceledStreamDrain(t)
+}
