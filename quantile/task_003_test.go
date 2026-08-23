@@ -7,3 +7,9 @@ func TestTaskPerks003TargetSliceCapacity(t *testing.T) {
 		t.Fatalf("len=%d", got)
 	}
 }
+
+func TestTaskPerks003TargetSliceCapacityBoundary(t *testing.T) {
+	if got := len(targetMapToSlice(map[float64]float64{.1: .01, .9: .01})); got != 2 {
+		t.Fatalf("len=%d", got)
+	}
+}

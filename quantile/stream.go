@@ -107,7 +107,7 @@ type target struct {
 }
 
 func targetMapToSlice(targetMap map[float64]float64) []target {
-	targets := make([]target, len(targetMap))
+	targets := make([]target, 0, len(targetMap))
 
 	for quantile, epsilon := range targetMap {
 		t := target{
