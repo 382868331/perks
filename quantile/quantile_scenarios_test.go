@@ -197,3 +197,8 @@ func TestQuantileObjectiveErrorChain(t *testing.T) {
 		t.Fatalf("chain lost: %v", got)
 	}
 }
+
+func TestQuantileObjectiveErrorChainRegression(t *testing.T) {
+	TestQuantileObjectiveErrorChain(t)
+	TestQuantileObjectiveErrorChain(t)
+}
