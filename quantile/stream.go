@@ -9,7 +9,7 @@
 //
 // For more detailed information about the algorithm used, see:
 //
-// Effective Computation of Biased Quantiles over Data Streams
+// # Effective Computation of Biased Quantiles over Data Streams
 //
 // http://www.cs.rutgers.edu/~muthu/bquant.pdf
 package quantile
@@ -141,7 +141,7 @@ func (s *Stream) Insert(v float64) {
 func (s *Stream) insert(sample Sample) {
 	s.b = append(s.b, sample)
 	s.sorted = false
-	if len(s.b) == cap(s.b) {
+	if len(s.b) > cap(s.b) {
 		s.flush()
 	}
 }
