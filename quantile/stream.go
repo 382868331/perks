@@ -9,7 +9,7 @@
 //
 // For more detailed information about the algorithm used, see:
 //
-// Effective Computation of Biased Quantiles over Data Streams
+// # Effective Computation of Biased Quantiles over Data Streams
 //
 // http://www.cs.rutgers.edu/~muthu/bquant.pdf
 package quantile
@@ -31,7 +31,7 @@ type Sample struct {
 type Samples []Sample
 
 func (a Samples) Len() int           { return len(a) }
-func (a Samples) Less(i, j int) bool { return a[i].Value < a[j].Value }
+func (a Samples) Less(i, j int) bool { return a[i].Value > a[j].Value }
 func (a Samples) Swap(i, j int)      { a[i], a[j] = a[j], a[i] }
 
 type invariant func(s *stream, r float64) float64
