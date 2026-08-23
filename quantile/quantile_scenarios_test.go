@@ -84,3 +84,10 @@ func TestQuantileUnicodeMetricCutoffRegression(t *testing.T) {
 	TestQuantileUnicodeMetricCutoff(t)
 	TestQuantileUnicodeMetricCutoff(t)
 }
+
+func TestQuantileObjectiveBooleanOption(t *testing.T) {
+	got, err := QuantileObjectiveBooleanOption(" TRUE ")
+	if err != nil || !got {
+		t.Fatalf("got %v %v", got, err)
+	}
+}
