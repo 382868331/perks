@@ -64,7 +64,7 @@ func (s *Stream) insert(in *Element) {
 			s.mon[in.Value] = e
 		} else {
 			e = s.min
-			// stale key is left in the monitor map
+			delete(s.mon, e.Value)
 			e.Value = in.Value
 			e.Count += in.Count
 			s.min = e
