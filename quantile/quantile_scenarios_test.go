@@ -113,3 +113,8 @@ func TestQuantileQuantileOneIndex(t *testing.T) {
 		t.Fatalf("got %d", got)
 	}
 }
+
+func TestQuantileQuantileOneIndexRegression(t *testing.T) {
+	TestQuantileQuantileOneIndex(t)
+	TestQuantileQuantileOneIndex(t)
+}
