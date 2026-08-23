@@ -67,3 +67,8 @@ func TestQuantileZeroCompressionBatch(t *testing.T) {
 		t.Fatalf("got %v", got)
 	}
 }
+
+func TestQuantileZeroCompressionBatchRegression(t *testing.T) {
+	TestQuantileZeroCompressionBatch(t)
+	TestQuantileZeroCompressionBatch(t)
+}
