@@ -177,3 +177,11 @@ func TestQuantileParallelInsertCountRegression(t *testing.T) {
 	TestQuantileParallelInsertCount(t)
 	TestQuantileParallelInsertCount(t)
 }
+
+func TestQuantileCanceledStreamDrain(t *testing.T) {
+	ctx, cancel := context.WithCancel(context.Background())
+	cancel()
+	if got := QuantileCanceledStreamDrain(ctx, 20); got != 0 {
+		t.Fatalf("got %d", got)
+	}
+}
