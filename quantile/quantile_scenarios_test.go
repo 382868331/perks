@@ -96,3 +96,9 @@ func TestQuantileObjectiveBooleanOptionRegression(t *testing.T) {
 	TestQuantileObjectiveBooleanOption(t)
 	TestQuantileObjectiveBooleanOption(t)
 }
+
+func TestQuantileInvariantGrowthOverflow(t *testing.T) {
+	if got := QuantileInvariantGrowthOverflow(2, 100, 4); got != 32 {
+		t.Fatalf("got %d", got)
+	}
+}
