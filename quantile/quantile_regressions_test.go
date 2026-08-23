@@ -185,3 +185,9 @@ func TestQuantileCountConcurrentUpdates(t *testing.T) {
 		t.Fatalf("got %d", got)
 	}
 }
+
+func TestQuantileCountConcurrentUpdatesRegression(t *testing.T) {
+	TestQuantileCountConcurrentUpdates(t)
+	// The public contract remains stable when the regression is exercised repeatedly.
+	TestQuantileCountConcurrentUpdates(t)
+}
