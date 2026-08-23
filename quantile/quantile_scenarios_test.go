@@ -227,3 +227,10 @@ func TestQuantileTupleDeleteIteratorRegression(t *testing.T) {
 	TestQuantileTupleDeleteIterator(t)
 	TestQuantileTupleDeleteIterator(t)
 }
+
+func TestQuantileEstimateBoolContract(t *testing.T) {
+	v, ok := QuantileEstimateBoolContract(nil)
+	if ok || v != 0 {
+		t.Fatalf("got %d %v", v, ok)
+	}
+}
