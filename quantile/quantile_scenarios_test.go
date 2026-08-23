@@ -222,3 +222,8 @@ func TestQuantileTupleDeleteIterator(t *testing.T) {
 		t.Fatalf("got %v", got)
 	}
 }
+
+func TestQuantileTupleDeleteIteratorRegression(t *testing.T) {
+	TestQuantileTupleDeleteIterator(t)
+	TestQuantileTupleDeleteIterator(t)
+}
