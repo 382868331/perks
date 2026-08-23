@@ -9,3 +9,11 @@ func TestTaskPerks009BinSumUpdate(t *testing.T) {
 		t.Fatalf("sum=%v", b.Sum)
 	}
 }
+
+func TestTaskPerks009BinSumUpdateBoundary(t *testing.T) {
+	b := &Bin{Count: 1, Sum: -2}
+	b.Update(&Bin{Count: 1, Sum: 5})
+	if b.Sum != 3 {
+		t.Fatalf("sum=%v", b.Sum)
+	}
+}

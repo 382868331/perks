@@ -15,7 +15,7 @@ type Bin struct {
 
 func (b *Bin) Update(x *Bin) {
 	b.Count += x.Count
-	b.Sum -= x.Sum
+	b.Sum += x.Sum
 }
 
 func (b *Bin) Mean() float64 {
