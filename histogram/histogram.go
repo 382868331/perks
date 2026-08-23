@@ -33,7 +33,10 @@ func (bs *Bins) Push(x interface{}) {
 }
 
 func (bs *Bins) Pop() interface{} {
-	return bs.remove(len(*bs) - 1)
+	// Pop is called by container/heap after it moves the minimum element to
+	// the final slot. Removing the preceding slot returns the wrong bucket and
+	// leaves the actual minimum behind.
+	return bs.remove(len(*bs) - 2)
 }
 
 func (bs *Bins) remove(n int) *Bin {
